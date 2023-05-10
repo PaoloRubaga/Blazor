@@ -8,3 +8,13 @@ C:\Project\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard
 C:\Project\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.csproj.CoreCompileInputs.cache
 C:\Project\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.dll
 C:\Project\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.pdb
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\bin\Debug\netstandard2.0\DataAccessLibrary.deps.json
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\bin\Debug\netstandard2.0\DataAccessLibrary.dll
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\bin\Debug\netstandard2.0\DataAccessLibrary.pdb
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.csproj.AssemblyReference.cache
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.AssemblyInfoInputs.cache
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.AssemblyInfo.cs
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.csproj.CoreCompileInputs.cache
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.dll
+C:\Project\AziendaX\BlazorServerSideAppSourceCode\DataAccessLibrary\obj\Debug\netstandard2.0\DataAccessLibrary.pdb

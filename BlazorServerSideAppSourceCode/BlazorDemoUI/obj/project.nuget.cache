@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KrDeyii66WDLnJ0qxpfvyKnmKpm9sPQJJzckfRIOsXFRxWmvfm5ANqDLq4cJ4u+ZDGywBuaz7GstjlNP1g5GWg==",
+  "dgSpecHash": "JrwUZZftQFKgYRoOEAxa4DdareEFwKZtW6t/BRmZiw0JQzThDaBD3pkxBD9XPq7unAytwQSpDsg9BNHLoqPxXA==",
   "success": true,
-  "projectFilePath": "C:\\Project\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
+  "projectFilePath": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paolo.rubaga\\.nuget\\packages\\dapper\\2.0.30\\dapper.2.0.30.nupkg.sha512",
     "C:\\Users\\paolo.rubaga\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.0\\microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",

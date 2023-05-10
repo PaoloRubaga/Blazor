@@ -653,11 +653,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Project\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
+      "projectUniqueName": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
       "projectName": "BlazorDemoUI",
-      "projectPath": "C:\\Project\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
+      "projectPath": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\BlazorDemoUI.csproj",
       "packagesPath": "C:\\Users\\paolo.rubaga\\.nuget\\packages\\",
-      "outputPath": "C:\\Project\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\obj\\",
+      "outputPath": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\BlazorDemoUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\paolo.rubaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -674,8 +674,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Project\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj": {
-              "projectPath": "C:\\Project\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj"
+            "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj": {
+              "projectPath": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj"
             }
           }
         }

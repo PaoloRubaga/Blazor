@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NAjuD7fuhI7vjL9tvHEujhnfoug36TZv8fTFzajKZpjWrUYQqd9Zp4tYlLbboAGAoK/wWrr121o9ThAwpP2GZQ==",
+  "dgSpecHash": "e7zTH+t94777Uv9Jbw1R3iQfg/wyV8Slxx8Qj5H7SVZ5m+pyBzjzQw3F2wMa66DaTc9LkSeBrrlxzfY4xslX9g==",
   "success": true,
-  "projectFilePath": "C:\\Project\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj",
+  "projectFilePath": "C:\\Project\\AziendaX\\BlazorServerSideAppSourceCode\\DataAccessLibrary\\DataAccessLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paolo.rubaga\\.nuget\\packages\\dapper\\2.0.30\\dapper.2.0.30.nupkg.sha512",
     "C:\\Users\\paolo.rubaga\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.0\\microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",

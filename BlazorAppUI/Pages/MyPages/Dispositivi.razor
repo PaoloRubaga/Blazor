@@ -1,0 +1,73 @@
+﻿@page "/Data/Dispositivi"
+
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using BlazorAppUI.Models
+
+@inject IDispositivoData _db 
+
+<h1>Pagina Dispositivi</h1>
+
+<h4>Inserisci nuovo dispositivo</h4>
+<EditForm Model="@newDispositivo" OnValidSubmit="@InsertDispositivo">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="" @bind-Value="newDispositivo.Matricola" />
+    <InputText id="" @bind-Value="newDispositivo.Descrizione" />
+    <InputText id="" @bind-Value="newDispositivo.Modello" />
+
+    <button type="submit" class="btn btn-primary">Invio</button>
+
+</EditForm>
+
+<h4>Lista dei dispositivi</h4>
+@if (dispositivi is null)
+{
+    <p><em>Caricamento...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thread>
+            <tr>
+                <th>Matricola</th>
+                <th>Descrizione</th>
+                <th>Modello</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach (var dispositivo in dispositivi)
+            {
+                <tr>
+                    <td>@dispositivo.Matricola</td>
+                    <td>@dispositivo.Descrizione</td>
+                    <td>@dispositivo.Modello</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<DispositivoModel> dispositivi;
+    private DisplayDispositivoModel newDispositivo = new DisplayDispositivoModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        dispositivi = await _db.GetDispositivo();
+    }
+
+    private async Task InsertDispositivo()
+    {
+        DispositivoModel d = new DispositivoModel
+            {
+                Matricola = newDispositivo.Matricola,
+                Descrizione = newDispositivo.Descrizione,
+                Modello = newDispositivo.Modello
+            };
+        await _db.InsertDispositivo(d);
+
+        dispositivi.Add(d);
+    }
+}
