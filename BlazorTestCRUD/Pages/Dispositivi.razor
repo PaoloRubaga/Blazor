@@ -1,0 +1,94 @@
+﻿@page "/Data/Dispositivi"
+
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using BlazorTestCRUD.Models
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+@inject IDispositivoData _db 
+
+<h1>Pagina Dispositivi</h1>
+
+<h4>Inserisci nuovo dispositivo</h4>
+
+<EditForm Model="@newDispositivo" OnValidSubmit="@InsertDispositivo">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <label>Matricola
+    <InputText id="Matricola" @bind-Value="newDispositivo.Matricola"  DisplayName="ueeee"/>
+    </label><br />
+    <label>Descrizione
+        <InputText id="Descrizione" @bind-Value="newDispositivo.Descrizione" DisplayName="ueeee" />
+    </label><br />
+    <label>Modello
+        <InputText id="Modello" @bind-Value="newDispositivo.Modello" DisplayName="ueeee" />
+    </label><br />
+
+    <button type="submit" class="btn btn-primary">Invio</button>
+
+</EditForm>
+
+<h4>Lista dei dispositivi</h4>
+@if (dispositivi is null)
+{
+    <p><em>Caricamento...</em></p>
+}
+else
+{
+    <QuickGrid Items="dispositivi.AsQueryable()">
+        <PropertyColumn Property="d => d.Matricola" Sortable="true" />
+        <PropertyColumn Property="d => d.Descrizione" Sortable="true" />
+        <PropertyColumn Property="d => d.Modello" Sortable="true" />
+        <TemplateColumn >
+            <button hidden="@isHidden">modificami</button>
+        </TemplateColumn>
+    </QuickGrid>
+
+    <table class="table table-striped">
+        <thread>
+            <tr>
+                <th>Matricola</th>
+                <th>Descrizione</th>
+                <th>Modello</th>
+            </tr>
+        </thread>
+        <tbody>
+            @foreach (var dispositivo in dispositivi)
+            {
+                <tr>
+                    <td>@dispositivo.Matricola</td>
+                    <td>@dispositivo.Descrizione</td>
+                    <td>@dispositivo.Modello</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<DispositivoModel> dispositivi;
+    private DisplayDispositivoModel newDispositivo = new DisplayDispositivoModel();
+    private bool isHidden = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dispositivi = await _db.GetDispositivo();
+    }
+
+    private async Task InsertDispositivo()
+    {
+        DispositivoModel d = new DispositivoModel
+            {
+                Matricola = newDispositivo.Matricola,
+                Descrizione = newDispositivo.Descrizione,
+                Modello = newDispositivo.Modello
+            };
+        await _db.InsertDispositivo(d);
+
+        dispositivi.Add(d);
+    }
+    private void HideElement()
+    {
+        isHidden = true;
+    }
+}

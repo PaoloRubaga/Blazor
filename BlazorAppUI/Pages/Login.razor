@@ -1,0 +1,26 @@
+﻿@page "/login"
+@using BlazorAppUI.Authentication
+@inject UserAccountService userAccountServide
+@inject IJSRuntime js
+@inject AuthenticationStateProvider authStateProvider
+@inject NavigationManager navManager
+
+
+<div class="row">
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+        <div class="mb-3 text-center">
+            <h3>LOGIN</h3>
+        </div>
+        <div class="mb-3">
+            <label>User Name</label>
+            <Input @bind="model.UserName" class="form-control" placeholder="User Name" />
+        </div><div class="mb-3">
+            <label>Password</label>
+            <Input @bind="model.Password" class="form-control" placeholder="User Name" />
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
