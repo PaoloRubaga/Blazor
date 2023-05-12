@@ -9,42 +9,45 @@
 
 <h1>Pagina Dispositivi</h1>
 
-<h4>Inserisci nuovo dispositivo</h4>
+<h3>Inserisci nuovo dispositivo</h3>
 
 <EditForm Model="@newDispositivo" OnValidSubmit="@InsertDispositivo">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <label>Matricola
-    <InputText id="Matricola" @bind-Value="newDispositivo.Matricola"  DisplayName="ueeee"/>
+    <InputText id="Matricola" @bind-Value="newDispositivo.Matricola" />
     </label><br />
     <label>Descrizione
-        <InputText id="Descrizione" @bind-Value="newDispositivo.Descrizione" DisplayName="ueeee" />
+        <InputText id="Descrizione" @bind-Value="newDispositivo.Descrizione" />
     </label><br />
     <label>Modello
-        <InputText id="Modello" @bind-Value="newDispositivo.Modello" DisplayName="ueeee" />
+        <InputText id="Modello" @bind-Value="newDispositivo.Modello" />
     </label><br />
-
-    <button type="submit" class="btn btn-primary">Invio</button>
-
+    <button type="submit" class="btn btn-primary">Conferma Inserimento</button>
 </EditForm>
-
-<h4>Lista dei dispositivi</h4>
+<br />
+<br />
+<br />
+<h3>Lista dei dispositivi</h3>
 @if (dispositivi is null)
 {
     <p><em>Caricamento...</em></p>
 }
 else
 {
-    <QuickGrid Items="dispositivi.AsQueryable()">
+
+    <QuickGrid Items="dispositivi.AsQueryable()" class="table table-striped">
         <PropertyColumn Property="d => d.Matricola" Sortable="true" />
         <PropertyColumn Property="d => d.Descrizione" Sortable="true" />
         <PropertyColumn Property="d => d.Modello" Sortable="true" />
-        <TemplateColumn >
-            <button hidden="@isHidden">modificami</button>
+       <TemplateColumn Title="Azioni">
+            <button @onclick="@(() => DeleteDispositivo(context ))">Elimina</button>
+            <button @onclick="@(() => ModificaDispositivo(context))">Modifica</button>
         </TemplateColumn>
+        
     </QuickGrid>
 
-    <table class="table table-striped">
+    @*<table class="table table-striped">
         <thread>
             <tr>
                 <th>Matricola</th>
@@ -62,13 +65,50 @@ else
                 </tr>
             }
         </tbody>
-    </table>
+    </table>*@
+
+    @if (dispositivoDaModificare != null)
+    {
+        <br />
+        <br />
+        <br />
+        <h3>Sezione Modifica Dispositivo</h3>
+        <div >
+            <EditForm Model="@dispositivoModificato" OnValidSubmit="@UpdateDispositivo">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <label>
+                    Matricola
+                    <InputText id="Matricola" @bind-Value="dispositivoModificato.Matricola" placeholder=@dispositivoDaModificare.Matricola />
+                </label><br />
+                <label>
+                    Descrizione
+                    <InputText id="Descrizione" @bind-Value="dispositivoModificato.Descrizione" placeholder=@dispositivoDaModificare.Descrizione />
+                </label><br />
+                <label>
+                    Modello
+                    <InputText id="Modello" @bind-Value="dispositivoModificato.Modello" placeholder=@dispositivoDaModificare.Modello />
+                </label><br />
+
+                <button type="submit" class="btn btn-primary">Conferma Modifica</button>
+
+            </EditForm>
+            
+        </div>
+
+       
+    }
 }
 
 @code {
+
+
+
+    private bool HideLabel { get; set; } = false;
     private List<DispositivoModel> dispositivi;
     private DisplayDispositivoModel newDispositivo = new DisplayDispositivoModel();
-    private bool isHidden = false;
+    private DispositivoModel dispositivoDaModificare; 
+    private DispositivoModel dispositivoModificato = new DispositivoModel();
 
     protected override async Task OnInitializedAsync()
     {
@@ -85,10 +125,47 @@ else
             };
         await _db.InsertDispositivo(d);
 
-        dispositivi.Add(d);
+        await OnInitializedAsync();
     }
-    private void HideElement()
+
+    private async Task DeleteDispositivo(DispositivoModel d)
     {
-        isHidden = true;
+
+        await _db.DeleteDispositivo(d);
+        await OnInitializedAsync();
+
     }
+    private async Task UpdateDispositivo()
+    {
+        await _db.UpdateDispositivo(dispositivoDaModificare, dispositivoModificato);
+        
+        dispositivoDaModificare = null; 
+        await OnInitializedAsync();
+    }
+    
+    private async Task ModificaDispositivo(DispositivoModel d)
+    {
+        dispositivoDaModificare = new DispositivoModel
+            {
+                Matricola = d.Matricola,
+                Descrizione = d.Descrizione,
+                Modello = d.Modello
+            };
+
+        //await _db.UpdateDispositivo(d,d);
+
+        await OnInitializedAsync();
+
+        //dispositivoDaModificare = null;
+
+    }
+
+    private void Toggle()
+    {
+        HideLabel = !HideLabel;
+    }
+
+
+
+
 }

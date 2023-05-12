@@ -43,3 +43,13 @@ C:\Project\AziendaX\BlazorTestCRUD\obj\Debug\net6.0\BlazorTestCRUD.pdb
 C:\Project\AziendaX\BlazorTestCRUD\obj\Debug\net6.0\BlazorTestCRUD.genruntimeconfig.cache
 C:\Project\AziendaX\BlazorTestCRUD\obj\Debug\net6.0\ref\BlazorTestCRUD.dll
 C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Smart.Blazor.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\System.IO.Pipelines.dll

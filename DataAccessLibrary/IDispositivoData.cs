@@ -6,5 +6,8 @@ namespace DataAccessLibrary
     {
         Task<List<DispositivoModel>> GetDispositivo();
         Task InsertDispositivo(DispositivoModel dispositivo);
+        Task UpdateDispositivo(DispositivoModel dispositivoVecchio, DispositivoModel dispositivoNuovo);
+        Task DeleteDispositivo(DispositivoModel dispositivo);
+
     }
 }
