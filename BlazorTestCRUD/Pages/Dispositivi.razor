@@ -107,8 +107,8 @@ else
     private bool HideLabel { get; set; } = false;
     private List<DispositivoModel> dispositivi;
     private DisplayDispositivoModel newDispositivo = new DisplayDispositivoModel();
-    private DispositivoModel dispositivoDaModificare; 
-    private DispositivoModel dispositivoModificato = new DispositivoModel();
+    private DispositivoModel dispositivoDaModificare, dispositivoMod; 
+    private DisplayDispositivoModel dispositivoModificato = new DisplayDispositivoModel();
 
     protected override async Task OnInitializedAsync()
     {
@@ -137,7 +137,15 @@ else
     }
     private async Task UpdateDispositivo()
     {
-        await _db.UpdateDispositivo(dispositivoDaModificare, dispositivoModificato);
+        dispositivoMod = new DispositivoModel
+            {
+                Matricola = dispositivoModificato.Matricola,
+                Descrizione = dispositivoModificato.Descrizione,
+                Modello = dispositivoModificato.Modello
+
+            };
+
+        await _db.UpdateDispositivo(dispositivoDaModificare, dispositivoMod);
         
         dispositivoDaModificare = null; 
         await OnInitializedAsync();
@@ -165,7 +173,17 @@ else
         HideLabel = !HideLabel;
     }
 
+    private string inputValue;
 
+    protected override void OnInitialized()
+    {
+        inputValue = "Inserisci un valore";
+    }
+
+    private void HandleInputChange(ChangeEventArgs e)
+    {
+        inputValue = e.Value?.ToString();
+    }
 
 
 }
