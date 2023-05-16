@@ -1,5 +1,4 @@
 ﻿using DataAccessLibrary.Models;
-using Microsoft.AspNetCore.Components;
 
 namespace DataAccessLibrary
 {
@@ -27,11 +26,11 @@ namespace DataAccessLibrary
             return _db.SaveData(sql, dispositivo);
         }
 
-        public Task UpdateDispositivo(DispositivoModel dispositivoVecchio, DispositivoModel dispositivoNuovo)
+        public Task UpdateDispositivo(string matricolaPk, DispositivoModel dispositivoNuovo)
         {
             string sql = $@"UPDATE dbo.Dispositivi 
                             SET Matricola = @Matricola, Descrizione = @Descrizione, Modello = @Modello
-                            WHERE Matricola = '{dispositivoVecchio.Matricola}'
+                            WHERE Matricola = '{matricolaPk}'
                            ;";
 
             return _db.SaveData(sql, dispositivoNuovo);
@@ -44,12 +43,29 @@ namespace DataAccessLibrary
             return _db.SaveData(sql, dispositivo);
         }
 
-        private ElementReference personDetailsElement;
+        public Task<List<DispositivoModel>> RicercaDispositivi(DispositivoModel dispositivo)
+        {
+            string sql = @"SELECT * 
+                        FROM dbo.Dispositivi 
+                        WHERE 1=1";
 
-        //public async Task FocusOnDetails()
-        //{
-        //    await personDetailsElement.FocusAsync();
-        //}
+            if (!string.IsNullOrEmpty(dispositivo.Matricola))
+            {
+                sql += " AND Matricola = @Matricola";
+            }
+
+            if (!string.IsNullOrEmpty(dispositivo.Descrizione))
+            {
+                sql += " AND Descrizione = @Descrizione";
+            }
+
+            if (!string.IsNullOrEmpty(dispositivo.Modello))
+            {
+                sql += " AND Modello = @Modello";
+            }
+
+            return _db.LoadData<DispositivoModel, dynamic>(sql, dispositivo);
+        }
 
 
     }

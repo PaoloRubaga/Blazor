@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Project/AziendaX/BlazorTestCRUD/Pages/RicercaProva.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmljZXJjYVByb3ZhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Project/AziendaX/BlazorTestCRUD/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -8,13 +8,29 @@
     ".NETCoreApp,Version=v6.0": {
       "BlazorTestCRUD/1.0.0": {
         "dependencies": {
+          "Blazored.Modal": "6.0.1",
           "Dapper": "2.0.123",
           "DataAccessLibrary": "1.0.0",
           "Microsoft.AspNetCore.Components.QuickGrid": "0.1.0-alpha.22351.1",
+          "Polly": "6.1.2",
           "Smart.Blazor": "15.1.1"
         },
         "runtime": {
           "BlazorTestCRUD.dll": {}
+        }
+      },
+      "Blazored.Modal/6.0.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.6",
+          "Microsoft.AspNetCore.Components.Web": "6.0.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.JSInterop.WebAssembly": "3.2.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazored.Modal.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Dapper/2.0.123": {
@@ -148,6 +164,17 @@
           }
         }
       },
+      "Microsoft.JSInterop.WebAssembly/3.2.1": {
+        "dependencies": {
+          "Microsoft.JSInterop": "6.0.6"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.JSInterop.WebAssembly.dll": {
+            "assemblyVersion": "3.2.1.0",
+            "fileVersion": "3.200.120.31714"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -165,6 +192,14 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "Polly/6.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.1.2.0"
           }
         }
       },
@@ -279,6 +314,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Blazored.Modal/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a7FwVYU2nDL6MBvtBnkp8GSLTEdZU4eKcN8ZcfhQNh4tFwGRKsIvz9jN+6eIEGV1PdI2rbzHkif/igyOcfC8Zg==",
+      "path": "blazored.modal/6.0.1",
+      "hashPath": "blazored.modal.6.0.1.nupkg.sha512"
+    },
     "Dapper/2.0.123": {
       "type": "package",
       "serviceable": true,
@@ -391,6 +433,13 @@
       "path": "microsoft.jsinterop/6.0.6",
       "hashPath": "microsoft.jsinterop.6.0.6.nupkg.sha512"
     },
+    "Microsoft.JSInterop.WebAssembly/3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wYKx4YeBTnv1bzKZtdsWH0O9OmmYm7zq56QkKCUdl1hDg4Gn0lmCDfYBC0r1k5/Wh64IveuWwpkyTWjqCmp4pg==",
+      "path": "microsoft.jsinterop.webassembly/3.2.1",
+      "hashPath": "microsoft.jsinterop.webassembly.3.2.1.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -418,6 +467,13 @@
       "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Polly/6.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YIayKzqergfdSzWRpkhc7r5NpcYoljNarT0HNygewJdDsaCDgdAjGMsFAEsrlQf+rEQOPYrZlkfbhsB9QzdPIg==",
+      "path": "polly/6.1.2",
+      "hashPath": "polly.6.1.2.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",

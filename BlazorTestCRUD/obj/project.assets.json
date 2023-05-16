@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Blazored.Modal/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.6",
+          "Microsoft.AspNetCore.Components.Web": "3.1.6",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.6",
+          "Microsoft.JSInterop.WebAssembly": "3.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazored.Modal.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazored.Modal.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazored.Modal.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazored.Modal.props": {}
+        }
+      },
       "Dapper/2.0.123": {
         "type": "package",
         "compile": {
@@ -256,6 +277,22 @@
           }
         }
       },
+      "Microsoft.JSInterop.WebAssembly/3.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.JSInterop": "3.1.6"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.JSInterop.WebAssembly.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.JSInterop.WebAssembly.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -317,6 +354,19 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Polly/6.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "related": ".deps.json;.pdb;.xml"
           }
         }
       },
@@ -502,6 +552,25 @@
     }
   },
   "libraries": {
+    "Blazored.Modal/6.0.1": {
+      "sha512": "a7FwVYU2nDL6MBvtBnkp8GSLTEdZU4eKcN8ZcfhQNh4tFwGRKsIvz9jN+6eIEGV1PdI2rbzHkif/igyOcfC8Zg==",
+      "type": "package",
+      "path": "blazored.modal/6.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazored.modal.6.0.1.nupkg.sha512",
+        "blazored.modal.nuspec",
+        "build/Blazored.Modal.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazored.Modal.props",
+        "buildTransitive/Blazored.Modal.props",
+        "icon.png",
+        "lib/netstandard2.1/Blazored.Modal.dll",
+        "staticwebassets/blazored-modal.css",
+        "staticwebassets/blazored.modal.js"
+      ]
+    },
     "Dapper/2.0.123": {
       "sha512": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
       "type": "package",
@@ -900,6 +969,21 @@
         "microsoft.jsinterop.nuspec"
       ]
     },
+    "Microsoft.JSInterop.WebAssembly/3.2.1": {
+      "sha512": "wYKx4YeBTnv1bzKZtdsWH0O9OmmYm7zq56QkKCUdl1hDg4Gn0lmCDfYBC0r1k5/Wh64IveuWwpkyTWjqCmp4pg==",
+      "type": "package",
+      "path": "microsoft.jsinterop.webassembly/3.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.txt",
+        "lib/netstandard2.1/Microsoft.JSInterop.WebAssembly.dll",
+        "lib/netstandard2.1/Microsoft.JSInterop.WebAssembly.xml",
+        "microsoft.jsinterop.webassembly.3.2.1.nupkg.sha512",
+        "microsoft.jsinterop.webassembly.nuspec"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -1122,6 +1206,25 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Polly/6.1.2": {
+      "sha512": "YIayKzqergfdSzWRpkhc7r5NpcYoljNarT0HNygewJdDsaCDgdAjGMsFAEsrlQf+rEQOPYrZlkfbhsB9QzdPIg==",
+      "type": "package",
+      "path": "polly/6.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.1/Polly.deps.json",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.deps.json",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.6.1.2.nupkg.sha512",
+        "polly.nuspec"
       ]
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
@@ -2510,9 +2613,11 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Blazored.Modal >= 6.0.1",
       "Dapper >= 2.0.123",
       "DataAccessLibrary >= 1.0.0",
       "Microsoft.AspNetCore.Components.QuickGrid >= 0.1.0-alpha.22351.1",
+      "Polly >= 6.1.2",
       "Smart.Blazor >= 15.1.1"
     ]
   },
@@ -2559,6 +2664,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Blazored.Modal": {
+            "target": "Package",
+            "version": "[6.0.1, )"
+          },
           "Dapper": {
             "target": "Package",
             "version": "[2.0.123, )"
@@ -2566,6 +2675,10 @@
           "Microsoft.AspNetCore.Components.QuickGrid": {
             "target": "Package",
             "version": "[0.1.0-alpha.22351.1, )"
+          },
+          "Polly": {
+            "target": "Package",
+            "version": "[6.1.2, )"
           },
           "Smart.Blazor": {
             "target": "Package",

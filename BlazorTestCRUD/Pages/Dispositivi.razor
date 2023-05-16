@@ -15,7 +15,7 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
     <label>Matricola
-    <InputText id="Matricola" @bind-Value="newDispositivo.Matricola" />
+        <InputText id="Matricola" @bind-Value="newDispositivo.Matricola" />
     </label><br />
     <label>Descrizione
         <InputText id="Descrizione" @bind-Value="newDispositivo.Descrizione" />
@@ -47,68 +47,42 @@ else
         
     </QuickGrid>
 
-    @*<table class="table table-striped">
-        <thread>
-            <tr>
-                <th>Matricola</th>
-                <th>Descrizione</th>
-                <th>Modello</th>
-            </tr>
-        </thread>
-        <tbody>
-            @foreach (var dispositivo in dispositivi)
-            {
-                <tr>
-                    <td>@dispositivo.Matricola</td>
-                    <td>@dispositivo.Descrizione</td>
-                    <td>@dispositivo.Modello</td>
-                </tr>
-            }
-        </tbody>
-    </table>*@
 
     @if (dispositivoDaModificare != null)
     {
-        <br />
-        <br />
-        <br />
-        <h3>Sezione Modifica Dispositivo</h3>
-        <div >
-            <EditForm Model="@dispositivoModificato" OnValidSubmit="@UpdateDispositivo">
+        <div>
+            <EditForm Model="@dispositivoDaModificare" OnValidSubmit="@UpdateDispositivo">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
                 <label>
                     Matricola
-                    <InputText id="Matricola" @bind-Value="dispositivoModificato.Matricola" placeholder=@dispositivoDaModificare.Matricola />
+                    <InputText id="Matricola" @bind-Value=@dispositivoDaModificare.Matricola />
                 </label><br />
                 <label>
                     Descrizione
-                    <InputText id="Descrizione" @bind-Value="dispositivoModificato.Descrizione" placeholder=@dispositivoDaModificare.Descrizione />
+                    <InputText id="Descrizione" @bind-Value=@dispositivoDaModificare.Descrizione />
                 </label><br />
                 <label>
                     Modello
-                    <InputText id="Modello" @bind-Value="dispositivoModificato.Modello" placeholder=@dispositivoDaModificare.Modello />
+                    <InputText id="Modello" @bind-Value=@dispositivoDaModificare.Modello />
                 </label><br />
 
                 <button type="submit" class="btn btn-primary">Conferma Modifica</button>
 
             </EditForm>
-            
-        </div>
 
-       
+        </div>
     }
 }
 
 @code {
 
-
-
-    private bool HideLabel { get; set; } = false;
     private List<DispositivoModel> dispositivi;
-    private DisplayDispositivoModel newDispositivo = new DisplayDispositivoModel();
-    private DispositivoModel dispositivoDaModificare, dispositivoMod; 
-    private DisplayDispositivoModel dispositivoModificato = new DisplayDispositivoModel();
+    private DispositivoModel newDispositivo = new DispositivoModel();
+    private DispositivoModel dispositivoDaModificare;
+    //private DisplayDispositivoModel dispositivoModificato = new DisplayDispositivoModel();
+    private DisplayDispositivoModel dispositivoModificato;
+    string matricolaPk;
 
     protected override async Task OnInitializedAsync()
     {
@@ -117,40 +91,25 @@ else
 
     private async Task InsertDispositivo()
     {
-        DispositivoModel d = new DispositivoModel
-            {
-                Matricola = newDispositivo.Matricola,
-                Descrizione = newDispositivo.Descrizione,
-                Modello = newDispositivo.Modello
-            };
-        await _db.InsertDispositivo(d);
-
+        await _db.InsertDispositivo(newDispositivo);
+        newDispositivo = new DispositivoModel();
         await OnInitializedAsync();
     }
 
     private async Task DeleteDispositivo(DispositivoModel d)
     {
-
         await _db.DeleteDispositivo(d);
         await OnInitializedAsync();
-
     }
+
     private async Task UpdateDispositivo()
     {
-        dispositivoMod = new DispositivoModel
-            {
-                Matricola = dispositivoModificato.Matricola,
-                Descrizione = dispositivoModificato.Descrizione,
-                Modello = dispositivoModificato.Modello
+        await _db.UpdateDispositivo(matricolaPk, dispositivoDaModificare);
 
-            };
-
-        await _db.UpdateDispositivo(dispositivoDaModificare, dispositivoMod);
-        
         dispositivoDaModificare = null; 
         await OnInitializedAsync();
     }
-    
+
     private async Task ModificaDispositivo(DispositivoModel d)
     {
         dispositivoDaModificare = new DispositivoModel
@@ -159,31 +118,12 @@ else
                 Descrizione = d.Descrizione,
                 Modello = d.Modello
             };
-
-        //await _db.UpdateDispositivo(d,d);
-
+        matricolaPk = d.Matricola;
         await OnInitializedAsync();
-
-        //dispositivoDaModificare = null;
-
     }
 
-    private void Toggle()
-    {
-        HideLabel = !HideLabel;
-    }
 
-    private string inputValue;
 
-    protected override void OnInitialized()
-    {
-        inputValue = "Inserisci un valore";
-    }
-
-    private void HandleInputChange(ChangeEventArgs e)
-    {
-        inputValue = e.Value?.ToString();
-    }
 
 
 }

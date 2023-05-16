@@ -1,0 +1,50 @@
+﻿@page "/Data/Ricerca"
+
+@using DataAccessLibrary
+@using DataAccessLibrary.Models
+@using BlazorTestCRUD.Models
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+@inject IDispositivoData _db;
+
+<h3>RicercaProva</h3>
+
+<EditForm Model="@dispositivoToFind" OnValidSubmit="@RicercaDispositivo">
+
+    <ValidationSummary />
+    <label>Matricola 
+        <InputText @bind-Value="dispositivoToFind.Matricola" />
+        <br />
+    </label>
+    <label>
+        Descrizione
+        <InputText @bind-Value="dispositivoToFind.Descrizione" />
+        <br />
+    </label>
+    <label>
+        Modello
+        <InputText @bind-Value="dispositivoToFind.Modello" />
+        <br />
+    </label>
+    <button type="submit" class="btn btn-primary">Ricerca Dispositivo</button>
+</EditForm>
+
+@if(dispositiviFound is not null)
+{
+    <QuickGrid Items="dispositiviFound.AsQueryable()" class="table table-striped">
+        <PropertyColumn Property="d => d.Matricola" />
+        <PropertyColumn Property="d => d.Descrizione" />
+        <PropertyColumn Property="d => d.Modello" />
+    </QuickGrid>
+}
+
+@code {
+    DispositivoModel dispositivoToFind = new DispositivoModel();
+    private List<DispositivoModel> dispositiviFound;
+
+    private async Task RicercaDispositivo()
+    {
+
+        dispositiviFound = await _db.RicercaDispositivi(dispositivoToFind);
+    }
+}

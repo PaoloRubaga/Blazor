@@ -15,5 +15,6 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)smart.blazor\15.1.1\buildTransitive\Smart.Blazor.props" Condition="Exists('$(NuGetPackageRoot)smart.blazor\15.1.1\buildTransitive\Smart.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.quickgrid\0.1.0-alpha.22351.1\buildTransitive\Microsoft.AspNetCore.Components.QuickGrid.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.quickgrid\0.1.0-alpha.22351.1\buildTransitive\Microsoft.AspNetCore.Components.QuickGrid.props')" />
+    <Import Project="$(NuGetPackageRoot)blazored.modal\6.0.1\buildTransitive\Blazored.Modal.props" Condition="Exists('$(NuGetPackageRoot)blazored.modal\6.0.1\buildTransitive\Blazored.Modal.props')" />
   </ImportGroup>
 </Project>

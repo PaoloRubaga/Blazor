@@ -6,8 +6,10 @@ namespace DataAccessLibrary
     {
         Task<List<DispositivoModel>> GetDispositivo();
         Task InsertDispositivo(DispositivoModel dispositivo);
-        Task UpdateDispositivo(DispositivoModel dispositivoVecchio, DispositivoModel dispositivoNuovo);
+        Task UpdateDispositivo(string matricolaPk, DispositivoModel dispositivoNuovo);
         Task DeleteDispositivo(DispositivoModel dispositivo);
+        Task<List<DispositivoModel>> RicercaDispositivi(DispositivoModel dispositivo);
+
 
     }
 }

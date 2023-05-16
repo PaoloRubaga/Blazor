@@ -53,3 +53,6 @@ C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Smart.Blazor.dll
 C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\System.IO.Pipelines.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Polly.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Blazored.Modal.dll
+C:\Project\AziendaX\BlazorTestCRUD\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll

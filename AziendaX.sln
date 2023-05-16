@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAutenticazione", "BlazorAutenticazione\BlazorAutenticazione.csproj", "{92025DDB-1811-4936-85FD-39E69B55568F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTestCRUD", "BlazorTestCRUD\BlazorTestCRUD.csproj", "{5067E864-1A31-4063-878E-9F592DB14D9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTestCRUD", "BlazorTestCRUD\BlazorTestCRUD.csproj", "{5067E864-1A31-4063-878E-9F592DB14D9E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F089C56E-C14C-4724-908D-8CF86B694471} = {F089C56E-C14C-4724-908D-8CF86B694471}
 	EndProjectSection
